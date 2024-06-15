@@ -1,0 +1,20 @@
+<%= form_with url: admin_jobs_create_path , method: :post, class: "divide-y divide-gray-200 mt-6" do |form| %>
+  <div class="divide-y divide-gray-200">
+    <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+      <div class="flex flex-col">
+        <label class="leading-loose">Task Name</label>
+        <%= form.text_field :name, class:"px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600", placeholder:"Event title" %>
+      </div>
+      <div class="flex flex-col">
+        <label class="leading-loose">Cron Expression</label>
+        <%= form.text_field :expression, class:"px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600", placeholder:"30 2 * 2 1-5" %>
+      </div> 
+      <div class="flex flex-col">
+        <label class="leading-loose">Webhook URL</label>
+        <%= form.text_field :webhook_url, class:"px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600", placeholder:"https://myapi.com/webhook"%>
+      </div>
+    </div>
+    <div class="pt-4 flex items-center space-x-4"> 
+      <%= form.submit "Create", class:"bg-cyan-600 hover:bg-cyan-500 flex justify-center items-center w-full text-white px-4 py-3 rounded-md focus:outline-none" %>
+    </div>
+<% end %>
